@@ -23,7 +23,7 @@
     "major": "yarn version --major"
   },
   "engines": {
-    "node": ">=14.17.0"
+    "node": ">=22.17.0"
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
