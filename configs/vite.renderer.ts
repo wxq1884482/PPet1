@@ -65,9 +65,6 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     outDir: '../../dist/renderer',
-    rollupOptions: {
-      input: join(__dirname, '../src/renderer/index.html'),
-    },
   },
   resolve: {
     alias: {
