@@ -1,16 +1,22 @@
 {
   "extends": "./paths.json",
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2022",
     "module": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "allowJs": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "esModuleInterop": true,
-    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
     "strict": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["vite/client", "node"]
   },
-  "exclude": ["dist", "scripts"]
+  "include": ["src", "configs"],
+  "exclude": ["dist", "scripts", "node_modules"]
 }
