@@ -44,7 +44,6 @@
 //     port: pkg.env.PORT,
 //   },
 // })
-
 import { join } from 'path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -54,18 +53,7 @@ import pkg from '../package.json'
 export default defineConfig({
   mode: process.env.NODE_ENV,
   root: join(__dirname, '../src/renderer'),
-  plugins: [
-    react(),
-    // 移除已废弃的 vite-plugin-imp，使用 Vite 内置的按需导入
-    {
-      name: 'antd-import',
-      config(config) {
-        config.optimizeDeps = config.optimizeDeps || {}
-        config.optimizeDeps.include = config.optimizeDeps.include || []
-        config.optimizeDeps.include.push('antd')
-      }
-    }
-  ],
+  plugins: [react()],
   css: {
     preprocessorOptions: {
       less: {
@@ -77,6 +65,9 @@ export default defineConfig({
   build: {
     emptyOutDir: true,
     outDir: '../../dist/renderer',
+    rollupOptions: {
+      input: join(__dirname, '../src/renderer/index.html'),
+    },
   },
   resolve: {
     alias: {
