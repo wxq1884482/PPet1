@@ -27,7 +27,7 @@ jobs:
         with:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
-          github_token: ${{ secrets.github_token }}
+          github_token: ${{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 }}
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
